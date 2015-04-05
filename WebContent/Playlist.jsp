@@ -24,7 +24,7 @@ dao.setConnection(conn);
 %>
 
 </head>
-<body background="KINGSMAN_SECRET_SERVICE_action_adventure_comedy_spy_crime_kingsman_secret_service_weapon_gun_1920x1376.jpg">
+<body background="wallpaper.jpg">
 	<font color="#FFFF66"> <br> <font size=50, face=a옛날목욕탕B>
 			<center>Video The Gathering</center>
 	</font>

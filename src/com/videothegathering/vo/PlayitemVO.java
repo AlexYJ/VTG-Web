@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class PlayitemVO {
 
-	// Å×ÀÌºíÀÇ ÄÃ·³¸í°ú µ¿ÀÏÇÑ ¸â¹öº¯¼ö ¸¸µé±â
+	// ì‚¬ìš©í•  ë³€ìˆ˜ ì„ ì–¸
 
 	private int id;
 
@@ -16,16 +16,16 @@ public class PlayitemVO {
 	
 	private Date date;
 
-	// µğÆúÆ® »ı¼ºÀÚ
+	// Value Object ì„ ì–¸
 
 	public PlayitemVO() {
 	}
 
-	// 4°³ÀÇ ÆÄ¶ó¹ÌÅÍ¸¦ ¹Ş¾Æ¼­ ¸â¹öº¯¼ö¿¡ ÀúÀåÇÏ´Â »ı¼ºÀÚ
+	// í…Œì´ë¸” ìš”ì†Œ 
 
 	public PlayitemVO(int id, String URL, String Title, String realMP4, Date date) {
 
-		// 4°³ÀÇ ÆÄ¶ó¹ÌÅÍ¸¦ ¹Ş¾Æ¼­ ¸â¹öº¯¼ö¿¡ ÀúÀåÇÏ´Â »ı¼ºÀÚ
+		// id, url, ì œëª©, ê°€ëŠ¥í•œê°€ ì—¬ë¶€, ë‚ ì§œ
 
 		this.id = id;
 

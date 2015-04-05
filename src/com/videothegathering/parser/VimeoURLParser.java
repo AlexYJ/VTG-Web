@@ -14,7 +14,7 @@ public class VimeoURLParser {
 
 	public String getVimeoMovieURL(String url) {
 
-		// url·ÎºÎÅÍ vid ÃßÃâÇÏ±â, string¿¡¼­ vid ÃßÃâÇØ¼­ º¯¼ö¿¡ ÀúÀåÇÏ°í "vid", "¿©±â"¿¡ ³Ñ°Ü
+		// urlï¿½Îºï¿½ï¿½ï¿½ vid ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½, stringï¿½ï¿½ï¿½ï¿½ vid ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ "vid", "ï¿½ï¿½ï¿½ï¿½"ï¿½ï¿½ ï¿½Ñ°ï¿½
 		String num = null;
 
 		Pattern pat = Pattern.compile("(?<=http:..vimeo.com.).*");
@@ -44,7 +44,7 @@ public class VimeoURLParser {
 					.referrer("http://vimeo.com/" + num)
 					.ignoreContentType(true)
 					.userAgent(
-							"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36")
+							"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36")
 					.timeout(5000); //
 			Connection.Response resp = conn.execute();
 			if (resp.statusCode() == 200) {
@@ -60,7 +60,7 @@ public class VimeoURLParser {
 				System.out.println(result);
 				Pattern pattern = Pattern
 						.compile("(?<=\"sd\").*?(?=\",\"height\":)");
-				// ÃßÃâÇÒ ³»¿ë.
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 
 				Matcher match = pattern.matcher(result);
 
@@ -80,7 +80,7 @@ public class VimeoURLParser {
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-		} // post ¿äÃ»
+		} // post ï¿½ï¿½Ã»
 
 		return Tag;
 	}

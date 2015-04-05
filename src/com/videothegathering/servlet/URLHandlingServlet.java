@@ -39,11 +39,11 @@ public class URLHandlingServlet extends HttpServlet {
 
 		String par = request.getParameter("user_URL");
 		String title = request.getParameter("user_title");
-		System.out.println(par); // ¾î´À »çÀÌÆ®°¡ µé¾î¿Ô´Â°¡?
+		System.out.println(par); // íŒŒë¼ë¯¸í„° ì¶œë ¥
 
 		String mp4addr = null;
 
-		// »çÀÌÆ® ºĞ¼®
+		// íŒŒì‹± ì»¨í…ì¸ 
 		if (par.contains("tvpot.daum.net"))
 			mp4addr = new DaumURLParser().getDaumMovieURL(par);
 
@@ -56,7 +56,7 @@ public class URLHandlingServlet extends HttpServlet {
 		else {
 			System.out.println("Error! This is wrong URL.");
 			return;
-		} // ´Ù ¾Æ´Ò °æ¿ì ¿¡·¯Ã³¸®
+		} // ì—ëŸ¬ ë©”ì‹œì§€ ì¶œë ¥ 
 		
 		System.out.println(mp4addr);
 		
