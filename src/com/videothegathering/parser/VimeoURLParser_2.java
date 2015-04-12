@@ -1,7 +1,6 @@
 package com.videothegathering.parser;
 
 import org.jsoup.Connection;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -11,9 +10,9 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class VimeoURLParser {
+public class VimeoURLParser_2 {
 
-	public String getVimeoMovieURL(String url) {
+	public String getVimeoMovieURL_2(String url) {
 
 		String num = null;
 
@@ -31,19 +30,20 @@ public class VimeoURLParser {
 		Elements elements = null;
 		String Tag = null;
 
-		String s2 = "받아옴받아옴";
+		String s2 = "받아와야함";
 		String p2 = "[/]";
-		String[] sArray = s2.split(p2);
+		String[] sArray2 = s2.split(p2);
 
-		for (int i = 0; i < sArray.length; i++) {
-			System.out.println(sArray[i]);
+		for (int i = 0; i < sArray2.length; i++) {
+			System.out.println(sArray2[i]);
 		}
 		try {
 
 			Connection conn = Jsoup
-					.connect("https://pdlvimeocdn-a.akamaihd.net/" + sArray)
+					.connect("https://pdlvimeocdn-a.akamaihd.net/" + sArray2)
 					.data("token2", "0")
 					.data("aksessionid", "1")
+					.data("ns", "4")
 					// request.
 					.referrer("http://vimeo.com/" + num)
 					.ignoreContentType(true)
@@ -72,7 +72,7 @@ public class VimeoURLParser {
 					Tag = match.group(0);
 				}
 
-				pattern = Pattern.compile("https://.*");
+				pattern = Pattern.compile("http://.*");
 				match = pattern.matcher(Tag);
 
 				if (match.find()) {

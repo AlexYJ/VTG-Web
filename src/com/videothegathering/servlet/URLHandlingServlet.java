@@ -11,7 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.videogathering.dao.Initialize;
 import com.videogathering.dao.VtgDAO;
 import com.videothegathering.parser.DaumURLParser;
+import com.videothegathering.parser.Nate_imbcURLParser;
+import com.videothegathering.parser.Nate_jtbcURLParser;
 import com.videothegathering.parser.VimeoURLParser;
+import com.videothegathering.parser.VimeoURLParser_2;
 import com.videothegathering.vo.PlayitemVO;
 
 /**
@@ -47,6 +50,18 @@ public class URLHandlingServlet extends HttpServlet {
 		if (par.contains("tvpot.daum.net"))
 			mp4addr = new DaumURLParser().getDaumMovieURL(par);
 
+		else if (par.contains("vimeo.com"))
+			mp4addr = new VimeoURLParser().getVimeoMovieURL(par);
+		
+		else if (par.contains("vimeo.com"))
+			mp4addr = new VimeoURLParser_2().getVimeoMovieURL_2(par);
+		
+		else if (par.contains("pann.nate.com"))
+			mp4addr = new Nate_imbcURLParser().getNate_imbcURL(par);
+		
+		else if (par.contains("pann.nate.com"))
+			mp4addr = new Nate_jtbcURLParser ().getNate_jtbcURL(par);
+		
 		else if (par.contains("vimeo.com"))
 			mp4addr = new VimeoURLParser().getVimeoMovieURL(par);
 

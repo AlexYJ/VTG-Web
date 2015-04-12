@@ -1,4 +1,5 @@
-package com.videothegathering.parser;  
+package com.videothegathering.parser;
+
 import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -9,14 +10,13 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 
-public class AfreecaURLParser {
+public class Nate_jtbcURLParser {
 
-	public String getAfreecaMovieURL(String url) {   //순차적으로 받아오는건데 가능?
+	public String getNate_jtbcURL(String url) {
 
-		// url�κ��� vid �����ϱ�, string���� vid �����ؼ� ������ �����ϰ� "vid", "����"�� �Ѱ�
 		String vid = null;
 		
-		Pattern pattern  =  Pattern.compile("(?<=..v.).*"); //http://175.158.11.15/vod/20150324/429/139081429_1.mp4?rand=0&start=120&end=180
+		Pattern pattern  =  Pattern.compile("(?<=http://svc.jtbc.joins.com/CP/AffVodView_Nate_Pann.aspx?.v.).*");
 		
 		Matcher match = pattern.matcher(url);
 		 
@@ -29,12 +29,12 @@ public class AfreecaURLParser {
 		Elements elements = null;
 		
 		try {
-			doc = Jsoup.connect("http://videofarm.daum.net/controller/api/open/v1_2/MovieLocation.apixml")
-					  // vid 그대로
-					  .data("vid", vid)	// 
-					  .data("rand", "0")		// 
-					  .data("start", "받아와야함")	// 
-					  .data("end", "받아와야함")	// 
+			doc = Jsoup.connect("http://svc.jtbc.joins.com/CP/AffVodView_Nate_Pann.aspx?")
+					  // ��û �� �ʿ��� parameter �� 
+					  .data("jtbc", vid)	// 
+					  .data("width", "630")		// 
+					  .data("height", "354")	// 
+					  .data("autoyn", "N")	// 
 
 					  // and other hidden fields which are being passed in post request.
 					  .userAgent("Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36")	// 
@@ -45,7 +45,7 @@ public class AfreecaURLParser {
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-		}	// post
+		}	// post ��û 
 
 		
 		String result = null;

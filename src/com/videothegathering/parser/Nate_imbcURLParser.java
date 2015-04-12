@@ -1,4 +1,5 @@
 package com.videothegathering.parser;
+
 import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -9,13 +10,13 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 
-public class DaumURLParser {
+public class Nate_imbcURLParser {
 
-	public String getDaumMovieURL(String url) {
+	public String getNate_imbcURL(String url) {
 
 		String vid = null;
 		
-		Pattern pattern  =  Pattern.compile("(?<=http:..tvpot.daum.net.v.).*");
+		Pattern pattern  =  Pattern.compile("(?<=http://vodmall.imbc.com/player/player./natePlayer.html?.v.).*");
 		
 		Matcher match = pattern.matcher(url);
 		 
@@ -28,14 +29,14 @@ public class DaumURLParser {
 		Elements elements = null;
 		
 		try {
-			doc = Jsoup.connect("http://videofarm.daum.net/controller/api/open/v1_2/MovieLocation.apixml")
+			doc = Jsoup.connect("http://vodmall.imbc.com/player/player./natePlayer.html")
 					  // ��û �� �ʿ��� parameter �� 
-					  .data("vid", vid)	// 
-					  .data("profile", "MAIN")		// 
-					  .data("play_loc", "tvpot")	// 
+					  .data("itemid", "받아오기")	// 
+					  .data("isAutoPlay", "N")		// 
+					  .data("broID", "받아오기")	// 
 
 					  // and other hidden fields which are being passed in post request.
-					  .userAgent("Mozilla")	// 
+					  .userAgent("Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36")	// 
 
 					  .get();
 			
